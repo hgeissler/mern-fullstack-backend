@@ -11,4 +11,6 @@ const DataSchema = new Schema(
   { timestamps: true}
 );
 
+// use the new Schema
+// it can be modified
 module.exports = mongoose.model("Data", DataSchema);
