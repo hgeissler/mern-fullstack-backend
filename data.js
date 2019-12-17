@@ -14,3 +14,11 @@ const DataSchema = new Schema(
 // use the new Schema
 // it can be modified
 module.exports = mongoose.model("Data", DataSchema);
+
+// POSTMAN post:
+// headers: content-type: application/json
+// body: raw, JSON 
+// {
+// 	"id": 1233,
+// 	"message": "ASD"
+// }
