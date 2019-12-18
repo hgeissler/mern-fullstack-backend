@@ -25,13 +25,14 @@ router.post('/postPw', (req,res) => {
     console.log('mongo db connection', err)
     if (!err) {
       res.send('connected')
+      
+      let db = mongoose.connection
+      
+      db.once('open', (err) => console.log('connectected to database', err))
+      db.on('error', console.error.bind(console, 'MongoDB connection error:'))
     }
   })
   
-  let db = mongoose.connection
-  
-  db.once('open', (err) => console.log('connectected to database', err))
-  db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 })
 
 
